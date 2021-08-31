@@ -2,14 +2,18 @@ import { useState, useRef } from 'react'
 import useSwr from 'swr'
 import Parse from 'parse/dist/parse.min.js'
 
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 import { CommentFetcher } from '../../fetchers/commentFetcher'
 
 import ShowMoreText from 'react-show-more-text'
 import Upvote from './Upvote'
 
+import EditTextarea from './EditTextarea'
+import UserDisplay from '../User/UserDisplay'
+
+
 import {
-	Spinner,
+	// Spinner,
 	Box,
 	Grid,
 	Avatar,
@@ -103,8 +107,8 @@ const Post = ({ postId, attributes, mutate }) => {
 		}
 	}
 
-	const DynamicTextarea = dynamic(() => import('./EditTextarea').then((mod) => mod.Edittext), {loading: () => <Spinner />})
-	const DynamicUserDisplay = dynamic(() => import('../User/UserDisplay').then((mod) => mod.Userdisplay), {loading: () => <Spinner />})
+	// const DynamicTextarea = dynamic(() => import('./EditTextarea').then((mod) => mod.Edittext), {loading: () => <Spinner />})
+	// const DynamicUserDisplay = dynamic(() => import('../User/UserDisplay').then((mod) => mod.Userdisplay), {loading: () => <Spinner />})
 
 	const CommentWrap = ({ postId, userData }) => {
 		const [displayComment, setDisplayComment] = useState(false)
@@ -152,7 +156,7 @@ const Post = ({ postId, attributes, mutate }) => {
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent>
-							<DynamicUserDisplay username={attributes.username} />
+							<UserDisplay username={attributes.username} />
 						</PopoverContent>
 					</Popover>
 					<Box mb={5} />
@@ -204,7 +208,7 @@ const Post = ({ postId, attributes, mutate }) => {
 					<ModalHeader>Update Post</ModalHeader>
 					<ModalCloseButton />
 					<ModalBody>
-						<DynamicTextarea
+						<EditTextarea
 							onUpdate={onUpdate}
 							onClose={onClose}
 							attributes={attributes}
