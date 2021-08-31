@@ -1,0 +1,39 @@
+.navbar {
+	background: pink;
+	height: 100px;
+}
+
+.myfield {
+	width: 100%;
+	font-size: 14px;
+	padding: 5px;
+	margin-bottom: 5px;
+	border: 1px solid gray;
+	border-radius: 3px;
+}
+.mytextarea {
+	width: calc(100% - 10px);
+	font-size: 14px;
+	padding: 5px;
+	margin-top: 10px;
+	border: 1px solid gray;
+	border-radius: 3px;
+	resize: none;
+}
+.error-msg {
+	font-size: 10px;
+	padding-left: 20px;
+	margin-bottom: 20px;
+	color: red;
+}
+
+.expand-anchor {
+	display: block;
+	font-size: 10px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.user-pick:hover {
+		background: lightgray;
+}
