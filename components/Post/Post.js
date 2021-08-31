@@ -103,8 +103,8 @@ const Post = ({ postId, attributes, mutate }) => {
 		}
 	}
 
-	const DynamicTextarea = dynamic(() => import('./EditTextarea'), {loading: () => <Spinner />})
-	const DynamicUserDisplay = dynamic(() => import('../User/UserDisplay'), {loading: () => <Spinner />})
+	const DynamicTextarea = dynamic(() => import('./EditTextarea').then((mod) => mod.Edittext), {loading: () => <Spinner />})
+	const DynamicUserDisplay = dynamic(() => import('../User/UserDisplay').then((mod) => mod.Userdisplay), {loading: () => <Spinner />})
 
 	const CommentWrap = ({ postId, userData }) => {
 		const [displayComment, setDisplayComment] = useState(false)
